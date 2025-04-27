@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header {
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.checkbox {
+  margin: 20px 0;
+}
+
+.checkbox input {
+  margin-right: 10px;
+}
+
+header p {
+  margin: 5px 0;
+  font-size: 1.2em;
+  color: #666;
+}
+
+.featured-categories {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.featured-categories h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+}
+
+.featured-categories ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.featured-categories ul li {
+  font-size: 1.2em;
+  margin: 10px 0;
+}

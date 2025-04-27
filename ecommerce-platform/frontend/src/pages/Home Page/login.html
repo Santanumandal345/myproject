@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            margin: 0;
+            background-image:url("https://img.freepik.com/free-vector/gradient-connection-background_23-2150441890.jpg?t=st=1742569080~exp=1742572680~hmac=71e7cdf0cc3be15d30cf3ad5088604f7a3bc36c946f4e4ddbae180208262dbdb&w=1380");
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            width: 360px;
+            text-align: center;
+        }
+        .input-container {
+            position: relative;
+            margin: 15px 0;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #6e8efb;
+            outline: none;
+            box-shadow: 0 0 8px rgba(110, 142, 251, 0.5);
+        }
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #666;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #6e8efb;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #5b78e4;
+            transform: scale(1.05);
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        p a {
+            color: #6e8efb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login</h2>
+        <div class="input-container">
+            <input type="email" id="email" placeholder="Email">
+        </div>
+        
+        <div class="input-container">
+            <input type="password" id="password" placeholder="Password">
+            <span class="toggle-password" onclick="togglePassword()">👁</span>
+        </div>
+        
+        <p class="error" id="error-msg"></p>
+        <label>
+            <input type="checkbox" id="rememberMe"> Remember Me
+        </label>
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </div>
+
+    <script>
+        function togglePassword() {
+            let password = document.getElementById("password");
+            password.type = password.type === "password" ? "text" : "password";
+        }
+
+        function login() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let rememberMe = document.getElementById("rememberMe").checked;
+            let errorMsg = document.getElementById("error-msg");
+
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            let user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                localStorage.setItem("loggedInUser", JSON.stringify(user));
+                if (rememberMe) {
+                    localStorage.setItem("rememberedEmail", email);
+                } else {
+                    localStorage.removeItem("rememberedEmail");
+                }
+                alert("Login successful!");
+                window.location.href = "index.html";
+            } else {
+                errorMsg.textContent = "Invalid email or password!";
+            }
+        }
+
+        window.onload = function () {
+            let rememberedEmail = localStorage.getItem("rememberedEmail");
+            if (rememberedEmail) {
+                document.getElementById("email").value = rememberedEmail;
+                document.getElementById("rememberMe").checked = true;
+            }
+        };
+    </script>
+
+</body>
+</html> 

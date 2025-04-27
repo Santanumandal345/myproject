@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase ONLINE STORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="logo.png" alt="ShopEase Logo">
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search for items...">
+                <img src="search.svg" height="18px" width="20px" alt="Search">
+            </div>
+
+            <!-- <div class="location">
+                <img src="location.svg" height="18px" width="18px" alt="Location">
+                <input type="search" placeholder="Enter location">
+            </div> -->
+
+
+            <div class="dropdown">
+                <div class="dropdown-btn" onclick="toggleDropdown()">
+                    <img src="location.svg" height="18px" width="18px" alt="Location">
+                    <span id="selected-location">All</span>
+                </div>
+                <div class="dropdown-content" id="dropdownContent">
+                    <input type="text" id="searchBox" placeholder="Search here..." onkeyup="filterCountries()">
+                    <ul id="countryList"></ul>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="user-actions">
+                <a href="producs.html" class="cart-container">
+                    <!-- <img src="card.svg" height="30px" width="30px" alt="Cart"> -->
+                    <!-- <span>Cart</span> -->
+
+                    <a href="cart.html" class="cart-container">
+                        <img src="card.svg" height="30px" width="30px" alt="Cart">
+                        <span>Cart (<span class="cart-count">0</span>)</span>
+                    </a>
+                    
+                </a>
+
+                <!-- <a href="signup.html">Sign up</a> -->
+               <a href="login.html">login</a>
+               
+                               <!-- <a href="profile.html" class="profile-container">
+                     <img src="profile.svg" height="30px" width="30px" alt="profile"></a> -->
+
+                    
+                     <!-- <div class="user-actions">
+                        <div class="profile-dropdown">
+                            <button class="profile-btn"><img src="profile.svg"height="30px" width="30px"  alt="Account">
+                                <i class="fas fa-user"></i> Account
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#">My Profile</a>
+                                <a href="#">Orders</a>
+                                <a href="#">Wishlist</a>
+                                <a href="#">Logout</a>
+                            </div>
+                        </div> -->
+                        <div class="user-actions">
+                            <div class="profile-dropdown">
+                              <button class="profile-btn">
+                                <img src="profile.svg" height="30px" width="30px" alt="Account">
+                                <i class="fas fa-user"><br></i> Account
+                              </button>
+                              <div class="dropdown-menu">
+                                <a href="#">My Profile</a>
+                                <a href="#">Orders</a>
+                                <a href="#">Wishlist</a>
+                                <a href="#">Logout</a>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
+
+                    
+
+            </div>
+        </div>
+
+        <nav>
+            <div class="nav-container">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Bags</a></li>
+                    <li><a href="#">Footwear</a></li>
+                    <li><a href="#">Groceries</a></li>
+                    <li><a href="#">Beauty</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Toy</a></li>
+                </ul>
+                
+                <div class="support-info">
+                    <img src="headphone.svg" alt="Support">
+                    <p>1900 - 888</p>
+                    <p>24/7 Support Center</p>
+                </div>
+            </div>
+        </nav>
+        
+
+    </header>
+
+    <div class="carousel">
+        <div class="slides">
+            <div class="slide"><img src="https://api.spicezgold.com/download/file_1734525002307_1723967638078_slideBanner1.6bbeed1a0c8ffb494f7c.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="https://api.spicezgold.com/download/file_1734525014348_NewProject(7).jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="https://api.spicezgold.com/download/file_1734524878924_1721277298204_banner.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="https://www.amazon.in/s/?_encoding=UTF8&i=automotive&rh=n%3A5258045031%2Cp_36%3A-3080000&dc=&qid=1742149420&rnid=5814682031&ref=sr_nr_p_36_0_0&pd_rd_w=Qcqz0&content-id=amzn1.sym.b2e6b817-ef58-48d2-b7f5-aa2e99650b40&pf_rd_p=b2e6b817-ef58-48d2-b7f5-aa2e99650b40&pf_rd_r=KCDXYPJEV9FQT3MHB8QN&pd_rd_wg=lbmzQ&pd_rd_r=2faaab8c-f101-4119-b637-5a394ebb0e0c&ref_=pd_hp_d_hero_unk" alt="Slide 4"></div>
+            <div class="slide"><img src="https://api.spicezgold.com/download/file_1734524930884_NewProject(6).jpg" alt="Slide 5"></div>
+        </div>
+    
+        <!-- Navigation -->
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    
+        <!-- Dots -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </div>
+    
+
+
+    <div class="product-container">
+        <div class="product-card">
+            <span class="discount">9%</span>
+            <img src="https://api.spicezgold.com/download/file_1734527612715_deel-band-women-rayon-embroidered-kurta-pant-dupatta-set-product-images-rvz2bvyrm2-0-202404071602.webp" alt="VNEED Women Embroidered">
+            <h3>VNEED Women Embroidered</h3>
+            <p class="price"><s>&#8377;999.00</s> <span class="new-price">&#8377;855.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <span class="discount">10%</span>
+            <img src="https://api.spicezgold.com/download/file_1734526836569_modestouze-attires-women-s-mukaish-worked-ethnic-jacket-with-top-and-pant-set-product-images-rvziicqwq6-0-202403231855.jpg" alt="Cotton Co-Ord Set">
+            <h3>Cotton Co-Ord Set  & Dye Tracksuit </h3>
+            <p class="price"><s>&#8377;1,150.00</s> <span class="new-price">&#8377;999.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <span class="discount">10%</span>
+            <img src="https://api.spicezgold.com/download/file_1734526629721_siril-poly-silk-white-beige-color-saree-with-blouse-piece-product-images-rv2vcdkuly-0-202304220523.webp" alt="Cotton Co-Ord Set">
+            <h3>Siril Poly Silk White & Beige Color Saree</h3>
+            <p class="price"><s>&#8377;1,150.00</s> <span class="new-price">&#8377;1599.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <span class="discount">10%</span>
+            <img src="https://api.spicezgold.com/download/file_1734526809409_need-printed-cotton-straight-kurtis-for-women-fancy-kurti-for-girls-regular-office-college-wear-kurta-for-ladies-kurti-pant-set-of-1-size-l-product-images-rvyi2nw7q6-0-202408011909.jpg" alt="Cotton Co-Ord Set">
+            <h3>VNEED Cotton Blend Straight Kurta </h3>
+            <p class="price"><s>&#8377;1,150.00</s> <span class="new-price">&#8377;1999.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <span class="discount">10%</span>
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT49jcsU2ibzNwKiLJ9XhOz88_ZRqpEA8h6wGLeX2FvKtBE-dnsN8OIpYWu5mOhWWCPgL2jm59x8ImIKm3_uTShfY2LNk_lWxTNqyTPMesBOHs2nFy75h6Qng">
+            <h3>GESPO Black</h3>
+            <p class="price"><s>&#8377;1,150.00</s> <span class="new-price">&#8377;999.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        
+        <div class="product-card">
+            <span class="discount">10%</span>
+            <img src="https://api.spicezgold.com/download/file_1734526125947_siril-georgette-pink-color-saree-with-blouse-piece-product-images-rvrk9p11sk-0-202308161432.webp" alt="Cotton Co-Ord Set">
+            <h3>Sheetal prostitute Pink Color Saree</h3>
+            <p class="price"><s>&#8377;1,150.00</s> <span class="new-price">&#8377;2999.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <span class="discount">10%</span>
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSCzfEY1lUDTknPZKBdNHzhDm_Fo4AIREDFPEh-QztVK6vPHQdGU4XPDXNoHgaAN0fYY5WoGwf2_yTXh362XAWn7J1TgWkZdBRUaoCXifvzu0vdD04y-6jK" alt="Cotton Co-Ord Set">
+            <h3> Cotton Shirt</h3>
+            <p class="price"><s>&#8377;1,150.00</s> <span class="new-price">&#8377;399.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <span class="discount">10%</span>
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR2cSaV9dhRJyPnurRk5SaJiqANq4-2nFV34uQnaklhZqF_10W1rL7I4ZkuI5poAwXQe1LUfbHPoMgWcVvDQM11RO7x2ussY0XwtSq3h26NijlCW2C0WZ20">
+            <h3>A-Line Kurti </h3>
+            <p class="price"><s>&#8377;1,150.00</s> <span class="new-price">&#8377;799.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <span class="discount">10%</span>
+            <img src="https://images.meesho.com/images/products/429259584/qp5az_1200.jpg" alt="Cotton Co-Ord Set">
+            <h3>Rayon Embroidered Kurta Pant </h3>
+            <p class="price"><s>&#8377;1,150.00</s> <span class="new-price">&#8377;699.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <span class="discount">10%</span>
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRP60DaXqbXT-wNzPv_n4j7gkhS_q1OpBaNUopIPaZSjWvxPVSC4QdstFmaaT4t5Hc08UCOHGNy4Inz4IJTvKohRaQFhywexYwqsT0zdHoQms2zNDL4Lx5G" alt="Cotton Co-Ord Set">
+            <h3>Chikankari Woven Kurta</h3>
+            <p class="price"><s>&#8377;1,150.00</s> <span class="new-price">&#8377;999.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <span class="discount">9%</span>
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/dress/l/v/e/s-pc-new-short-03-maroon-dress-pragusu-original-imah57gjhy4jnpmy.jpeg?q=70" alt="VNEED Women Embroidered">
+            <h3>VNEED Women Embroidered</h3>
+            <p class="price"><s>&#8377;999.00</s> <span class="new-price">&#8377;855.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <span class="discount">9%</span>
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/dress/q/f/k/3xl-cc428-charvi-creation-original-imah55yr6nvuyygb.jpeg?q=70" alt="VNEED Women Embroidered">
+            <h3>VNEED Women Embroidered</h3>
+            <p class="price"><s>&#8377;999.00</s> <span class="new-price">&#8377;855.00</span></p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+
+
+
+    </div>
+
+
+    <div class="ad-section">
+        <div class="ads-container">
+            <img src="https://api.spicezgold.com/download/file_1734525653108_NewProject(20).jpg" alt="Ad 1">
+            <img src="https://api.spicezgold.com/download/file_1734525634299_NewProject(2).jpg" alt="Ad 2">
+            <img src="https://api.spicezgold.com/download/file_1734525620831_NewProject(3).jpg" alt="Ad 3">
+            <img src="https://api.spicezgold.com/download/file_1734532742018_NewProject(22).jpg" alt="Ad 4">
+            <img src="https://service.spicezgold.com/download/1741669037986_banner2.webp" alt="Ad 5">
+            <!-- <img src="https://service.spicezgold.com/download/1741669087880_banner6.webp" alt="Ad 6"> -->
+        </div>
+    </div>
+
+
+
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-slider">
+            <a href="product-page-link-1.html" class="product-card">
+                <img src="https://api.spicezgold.com/download/file_1734774941574_e6mcHGzb_51e00e276f0744eebaf91c9a7b2b15aa.jpg" alt="Men Round Toe Lace-Up">
+                <div class="product-info">
+                    <p class="category">Footwear</p>
+                    <h3>Men Round Toe Lace-Up</h3>
+                    <p class="brand">By <span>Adeboy</span></p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="price">Rs 1200 <span class="old-price">Rs 1450</span></p>
+                </div>
+            </a>
+    
+            <a href="product-page-link-2.html" class="product-card">
+                <img src="https://api.spicezgold.com/download/file_1734772189809_op-nord-ce-3-lite-128-gb-8-gb-ram-pastel-lime-mobile-phone-digital-o493666102-p608711337-0-202404091704.webp" alt="OnePlus Nord CE 3">
+                <div class="product-info">
+                    <p class="category">Electronics</p>
+                    <h3>OnePlus Nord CE 3 Lite 5G</h3>
+                    <p class="brand">By <span>One Plus</span></p>
+                    <div class="rating">⭐⭐⭐⭐☆</div>
+                    <p class="price">Rs 15490 <span class="old-price">Rs 17490</span></p>
+                </div>
+            </a>
+    
+            <a href="product-page-link-3.html" class="product-card">
+                <img src="https://api.spicezgold.com/download/file_1734693301124_refurbished-dell-latitude-7490-notebook-laptop-8th-gen-intel-core-i5-8250u-8gb-512-gb-ssd-integrated-intel-hd-graphics-windows-10-pro-fhd-35-56-cm-14-0-inch-digital-o493838603-p604745601-0-202309221825.webp" alt="Dell Latitude">
+                <div class="product-info">
+                    <p class="category">Electronics</p>
+                    <h3>(Refurbished) Dell Latitude</h3>
+                    <p class="brand">By <span>Dell</span></p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="price">Rs 20199 <span class="old-price">Rs 21199</span></p>
+                </div>
+            </a>
+    
+            <a href="product-page-link-4.html" class="product-card">
+                <img src="https://api.spicezgold.com/download/file_1734533882271_piclite-slipper-for-women-daily-use-flipflops-ladies-slipper-casual-doctor-ortho-slipper-pack-of-1lh5-blue-7-product-images-rvwsfbtzkt-0-202401241802.jpg" alt="Piclite Slipper">
+                <div class="product-info">
+                    <p class="category">Footwear</p>
+                    <h3>Piclite Slipper for Women</h3>
+                    <p class="brand">By <span>Piclite</span></p>
+                    <div class="rating">⭐⭐⭐⭐☆</div>
+                    <p class="price">Rs 1400 <span class="old-price">Rs 1800</span></p>
+                </div>
+            </a>
+    
+            <a href="product-page-link-5.html" class="product-card">
+                <img src="https://m.media-amazon.com/images/I/4146RWmsLuL._SX300_SY300_QL70_FMwebp_.jpg" alt="Piclite Slipper">
+                <div class="product-info">
+                    <p class="category">Footwear</p>
+                    <h3>Piclite Slipper for Women</h3>
+                    <p class="brand">By <span>Piclite</span></p>
+                    <div class="rating">⭐⭐⭐⭐☆</div>
+                    <p class="price">Rs 1400 <span class="old-price">Rs 1800</span></p>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+
+   
+
+
+ <section class="women-led-section">
+    <div class="offer-header">
+        <h2>Up to 60% off | Curated products from women-led businesses</h2>
+        <a href="#">See all offers</a>
+    </div>
+
+    <div class="slider-container">
+        <button class="prev" onclick="scrollSlider(-1)">&#10094;</button>
+        <div class="product-slider">
+            <div class="product"><img src="https://m.media-amazon.com/images/I/91Da1XRg-xL._AC_SY200_.jpg" alt="Shampoo Paste"></div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/812eAIOycXL._AC_SY200_.jpg" alt="Brass Incense Burner">
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/716elPE7LKL._AC_SY200_.jpg" alt="Printed Table Cloth">
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/91RjPmlLXGL._AC_SY200_.jpg" alt="Decorative Candle Holders">
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/61yUjN4LAqL._AC_SY200_.jpg" alt="Wall Art Plates">
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/A1ID+uwzwcL._AC_SY200_.jpg" alt="Floral Table Runner">
+            </div>
+            <div class="product"><img src="https://m.media-amazon.com/images/I/71A5bcz43IL._AC_SY200_.jpg" alt="Tea Gift Box"></div>
+            <div class="product"><img src="https://m.media-amazon.com/images/I/71Sl9ScVpxL._AC_SY200_.jpg" alt="Nutri Signature Collection"></div>
+            <div class="product"><img src="https://m.media-amazon.com/images/I/61+a3Xp5t3L._AC_SY200_.jpg" alt="Brass Incense Burner"></div>
+            <div class="product"><img src="https://m.media-amazon.com/images/I/619p+wLZ3-L._AC_SY200_.jpg" alt="Printed Table Cloth"></div>
+            <div class="product"><img src="https://m.media-amazon.com/images/I/61PVFhHrZLL._AC_SY200_.jpg" alt="Wall Hanging Decor"></div>
+            <div class="product"><img src="https://m.media-amazon.com/images/I/61RJgDuvO3L._AC_SY200_.jpg" alt="Brass Candle Holder"></div>
+        </div>
+        <button class="next" onclick="scrollSlider(1)">&#10095;</button>
+    </div>
+</section>
+
+
+
+<section class="fashion-deals">
+    <div class="deals-header">Fashion Top Deals</div>
+
+    <div class="slider-container">
+        <button class="prev" onclick="scrollSlider(-1)">&#10094;</button>
+        <div class="product-slider">
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/sofa-sectional/d/h/i/symmetrical-77-camel-134-na-no-41-56101502sd04407-godrej-interio-original-imah8ewd8fwu5jat.jpeg?q=70" alt="Panty">
+                <div class="product-title">sofa</div>
+                <div class="product-price">Under ₹2999</div>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/bra/k/w/z/lightly-padded-36b-multiway-no-regular-br5203d18-clovia-original-imah8pfgpnbdzmq9.jpeg?q=70" alt="Swim & Beach Wear">
+                <div class="product-title">Swim & Beach Wear</div>
+                <div class="product-price">Under ₹299</div>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/lingerie-set/u/x/m/28-bra-panty-set-antiquefashion-original-imah4rqquqs7j34p.jpeg?q=70" alt="Lingerie Sets">
+                <div class="product-title">Lingerie Sets</div>
+                <div class="product-price">Under ₹299</div>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/b/i/e/9-kl17-killer-white-original-imah379u8dey57hh.jpeg?q=70" alt="Best Selling Shoes">
+                <div class="product-title">Best Selling Styles</div>
+                <div class="product-price">Min. 40% Off</div>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/kids-ethnic-set/y/b/9/9-10-years-lpgkts2654-lilpicks-original-imagtfvdne3uzfbh.jpeg?q=70" alt="Lilpicks Dress">
+                <div class="product-title">Lilpicks, Pspeaches...</div>
+                <div class="product-price">Min. 50% Off</div>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/belt/p/d/y/36-funaro-funaro-reversible-belt-united-colors-of-benetton-original-imagz2jwhnbmezkv.jpeg?q=70" alt="United Colors of Benetton">
+                <div class="product-title">United Colors of Ben...</div>
+                <div class="product-price">Upto 80% Off</div>
+            </div>
+
+
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/kids-apparel-combo/t/m/k/6-7-years-army-printed-track-pant-t-shirt-set-for-boys-3-original-imagyey7tmhvb3r2.jpeg?q=70" alt="Kids Clothing">
+                <div class="product-title">Kids' Clothing</div>
+                <div class="product-price">Min. 60% Off</div>
+            </div>
+
+
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/kids-apparel-combo/t/o/a/4-5-years-combo-3-t-hf13-zebra-mars-infiniti-original-imah3u99ahc4ar8z.jpeg?q=70" alt="Kids Clothing">
+                <div class="product-title">Kids' Clothing</div>
+                <div class="product-price">Min. 60% Off</div>
+            </div>
+
+
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/kids-dress/f/a/p/4-5-years-lpgdrs2385-lilpicks-original-imagzhw2m8szwzvc.jpeg?q=70" alt="Lilpicks Dress">
+                <div class="product-title">Lilpicks, Pspeaches...</div>
+                <div class="product-price">Min. 50% Off</div>
+            </div>
+           
+
+
+
+
+        </div>
+        <button class="next" onclick="scrollSlider(1)">&#10095;</button>
+    </div>
+</section>
+
+
+
+
+
+
+
+<a id="top"></a>
+
+<footer class="footer">
+    <div class="footer-top" onclick="scrollToTop()">Back to top</div>
+
+    <div class="footer-links">
+        <div class="footer-column">
+            <h3>Get to Know Us</h3>
+            <a href="#">About ShopEase</a>
+            <a href="#">Careers</a>
+            <a href="#">Press Releases</a>
+            <a href="#">ShopEase Science</a>
+        </div>
+        <div class="footer-column">
+            <h3>Connect with Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div class="footer-column">
+            <h3>Make Money with Us</h3>
+            <a href="#">Sell on ShopEase</a>
+            <a href="#">Sell under ShopEase Accelerator</a>
+            <a href="#">ShopEase Global Selling</a>
+            <a href="#">Become an Affiliate</a>
+            <a href="#">Fulfillment by ShopEase</a>
+        </div>
+        <div class="footer-column">
+            <h3>Let Us Help You</h3>
+            <a href="#">Your Account</a>
+            <a href="#">Returns Centre</a>
+            <a href="#">ShopEase App Download</a>
+            <a href="#">Help</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-logo">ShopEase</div>
+        <div class="footer-country">
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="hi">हिंदी</option>
+            </select>
+            <select id="country-select">
+                <option value="IN">🇮🇳 India</option>
+                <option value="US">🇺🇸 United States</option>
+                <option value="UK">🇬🇧 United Kingdom</option>
+            </select>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <script src="scripts.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

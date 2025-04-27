@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Welcome, <span id="userName"></span>!</h2>
+        <p>Email: <span id="userEmail"></span></p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        let user = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!user) {
+            alert("Please log in first!");
+            window.location.href = "login.html";
+        } else {
+            document.getElementById("userName").textContent = user.name;
+            document.getElementById("userEmail").textContent = user.email;
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            alert("Logged out successfully!");
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+2025-03-31 01:49:58 info: 	Server running on port 5000 
+2025-03-31 01:50:10 info: 	MongoDB connected successfully 
+2025-03-31 01:51:18 info: 	[0mPOST /api/users/signup [33m404[0m 3.256 ms - 1755[0m 
+2025-03-31 02:04:23 info: 	Server running on port 5000 
+2025-03-31 02:04:24 info: 	MongoDB connected successfully 
+2025-03-31 02:04:33 info: 	[0mPOST /api/users/signup [33m404[0m 2.911 ms - 1755[0m 
+2025-03-31 02:12:20 info: 	[0mPOST /api/users/signup [33m404[0m 0.988 ms - 1755[0m 
+2025-03-31 03:06:13 info: 	Server running on port 5000 
+2025-03-31 03:06:14 info: 	MongoDB connected successfully 
+2025-03-31 16:50:21 info: 	Server running on port 5000 
+2025-03-31 16:50:23 info: 	MongoDB connected successfully 
+2025-03-31 16:52:24 info: 	[0mPOST /api/users/signup [33m404[0m 2.907 ms - 1755[0m 
+2025-03-31 16:52:41 info: 	[0mPOST /api/signup [33m404[0m 0.913 ms - 1743[0m 
+2025-03-31 16:52:43 info: 	[0mPOST /api/signup [33m404[0m 0.968 ms - 1743[0m 
+2025-03-31 16:53:06 info: 	[0mGET /api/signup [33m404[0m 0.465 ms - 1743[0m 
+2025-03-31 17:00:15 info: 	Server running on port 5000 
+2025-03-31 17:00:17 info: 	MongoDB connected successfully 
+2025-03-31 17:21:41 info: 	Server running on port 5000 
+2025-03-31 17:21:43 info: 	MongoDB connected successfully 
+2025-03-31 22:21:54 info: 	Server running on port 5000 
